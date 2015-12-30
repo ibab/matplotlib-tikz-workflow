@@ -1,0 +1,25 @@
+% This example requires PGF >= 1.09 and only works wit PDFTeX
+% You have to compile document twice to get correct placement of nodes.
+\documentclass{beamer} %
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetikzlibrary{arrows,shapes,backgrounds}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [baseline=-.5ex]
+
+\begin{document}
+
+\begin{frame}
+  \begin{figure}
+    \input{./out.pgf}
+  \end{figure}
+
+  Text\tikz[na] \coordinate (text);
+
+  \begin{tikzpicture}[overlay]
+      \path[->,red,thick] (text) edge [bend right] (plot);
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}
