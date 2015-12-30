@@ -3,6 +3,7 @@
 
 Define tikz coordinates in your matplotlib figure and refer to them in your document!
 
-![Example result](./main.pdf)
+Execute `make` to run the example.
 
+[Example result](./main.pdf)
 
